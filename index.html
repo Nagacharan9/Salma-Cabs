@@ -4,16 +4,44 @@
   <meta charset="UTF-8">
   <title>Salma Cab Service</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Salma Cab Service</h1>
-  <form id="search-form">
-    <input type="text" placeholder="From" id="from" required>
-    <input type="text" placeholder="To" id="to" required>
-    <input type="date" id="date" required>
-    <button type="submit">Search</button>
-  </form>
-  <div id="ride-list"></div>
+  <header>
+    <div class="logo">🚗 Salma Cab Service</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Book a Cab</a>
+      <a href="#">Login</a>
+      <a href="#">Admin</a>
+    </nav>
+  </header>
+  <main>
+    <section class="search-section">
+      <h2>Find Your Ride</h2>
+      <form id="search-form">
+        <div class="form-group">
+          <label>From</label>
+          <input type="text" id="from" placeholder="City or Location" required>
+        </div>
+        <div class="form-group">
+          <label>To</label>
+          <input type="text" id="to" placeholder="Destination" required>
+        </div>
+        <div class="form-group">
+          <label>Date</label>
+          <input type="date" id="date" required>
+        </div>
+        <button type="submit" class="search-btn">Search</button>
+      </form>
+    </section>
+    <section class="results-section" id="ride-list">
+      <!-- Rides will appear here -->
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Salma Cab Service. All rights reserved.
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
