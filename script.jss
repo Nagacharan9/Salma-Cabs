@@ -1,7 +1,7 @@
-// Demo: Static list of rides
 const rides = [
   { from: "Mumbai", to: "Pune", date: "2025-09-20", driver: "Amit", seats: 3 },
   { from: "Delhi", to: "Agra", date: "2025-09-21", driver: "Priya", seats: 2 },
+  { from: "Bangalore", to: "Chennai", date: "2025-09-20", driver: "Salma", seats: 4 }
 ];
 
 document.getElementById('search-form').addEventListener('submit', function(e) {
@@ -21,17 +21,22 @@ function displayRides(rides) {
   const rideList = document.getElementById('ride-list');
   rideList.innerHTML = '';
   if (rides.length === 0) {
-    rideList.innerHTML = '<p>No rides found.</p>';
+    rideList.innerHTML = '<p>No rides found for your search.</p>';
     return;
   }
   rides.forEach(ride => {
     const div = document.createElement('div');
-    div.className = 'ride';
-    div.innerHTML = `<strong>${ride.from}</strong> → <strong>${ride.to}</strong><br>
-      Date: ${ride.date}<br>
-      Driver: ${ride.driver}<br>
-      Seats Available: ${ride.seats}<br>
-      <button disabled>Book Now (Demo)</button>`;
+    div.className = 'ride-card';
+    div.innerHTML = `
+      <div><strong>${ride.from}</strong> → <strong>${ride.to}</strong></div>
+      <div>Date: <b>${ride.date}</b></div>
+      <div>Driver: ${ride.driver}</div>
+      <div>Seats Available: ${ride.seats}</div>
+      <button class="book-btn" disabled>Book Now (Demo)</button>
+    `;
     rideList.appendChild(div);
   });
 }
+
+// Show all rides by default
+displayRides(rides);
